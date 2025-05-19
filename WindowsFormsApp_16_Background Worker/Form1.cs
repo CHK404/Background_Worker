@@ -68,7 +68,7 @@ namespace WindowsFormsApp_16_Background_Worker
         {
             for (int i = 0; i <= 100; i++)
             {
-                Thread.Sleep(50);   //0.05초 지연
+                Thread.Sleep(30);   //30ms 지연
                 worker.ReportProgress(i);
                 //현재 진행상황 i 값을 UI스레드로 전달
             }
@@ -108,6 +108,7 @@ namespace WindowsFormsApp_16_Background_Worker
         private void Worker_Completed(object sender, RunWorkerCompletedEventArgs e)
         {
             lblStatus.Text = "작업 완료";
+            MessageBox.Show("완료됨");
         }
     }
 }
